@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<link rel="icon" href="" type="iBRASIL.png">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 10;
+    }
+
+    :root {
+        --blue-color-primary: #dddddd;
+        --blue-color-secondary: #9d9c9c;
+
+        --green-color: #747474;
+
+        --light-color-primary: #ffffff;
+        --light-color-secondary: #6a0000;
+    }
+
+    body {
+        font-family: "Manrope", sans-serif;
+        height: 100vh;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: var(--light-color-primary);
+    }
+
+
+    #hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8px 2px 0;
+        background-image: linear-gradient(100deg, #474da5, #7f199ed1, #3b4297);
+        gap: 4px;
+    }
+
+    #hero .hero-text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    #hero .hero-text h2 {
+        font-size: 3px;
+        line-height: 4px;
+        font-weight: 0;
+        color: var(--blue-color-primary);
+    }
+
+    #hero .hero-text p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--blue-color-secondary);
+    }
+
+    #hero .hero-text button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--green-color);
+        border: none;
+        padding: 20px 40px;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: var(--light-color-primary);
+        width: 320px;
+        gap: 10px;
+        border-radius: 32px;
+    }
+
+    #hero .hero-text button:hover {
+        cursor: pointer;
+    }
+
+    #hero .frame .hero-text button::before {
+        padding-right: 10px;
+        top: 20px;
+        left: 38px;
+    }
+
+    #hero .hero-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 10px;
+        background-color: var(--light-color-primary);
+    }
+
+    #hero .hero-img img {
+        width: 30px;
+    }
+
+    #services {
+        padding: 48px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        background-color: var(--blue-color-primary);
+    }
+
+    #services .services-title {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    #services .services-title .services-sub-title {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 700;
+        color: var(--green-color);
+        text-transform: uppercase;
+    }
+
+    #services .services-title h3 {
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 70;
+        color: var(--light-color-secondary);
+    }
+
+    #services .services-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    #services .services-cards img {
+        width: 316px;
+    }
+
+    #services .services-cards .vet-services,
+    #services .services-cards .groom-services,
+    #services .services-cards .accommodation-services {
+        border-radius: 30px;
+        border: 2px solid var(--blue-color-primary);
+        width: 320px;
+        height: 476px;
+        background-color: var(--blue-color-secondary);
+    }
+
+    #services .services-cards .vet-services-text,
+    #services .services-cards .groom-services-text,
+    #services .services-cards .accommodation-services-text {
+        padding: 36px;
+    }
+
+    #services .services-cards h4 {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+        color: var(--light-color-primary);
+        padding-bottom: 20px;
+    }
+
+    #services .services-cards p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--light-color-primary);
+    }
+
+    #map .map-title {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        padding: 0 0px;
+    }
+
+    #map .map-title .map-sub-title {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 700;
+        color: var(--blue-color-secondary);
+        text-transform: uppercase;
+    }
+
+    #map .map-title h3 {
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 700;
+        color: var(--blue-color-primary);
+    }
+
+    #map .map-address {
+        display: flex;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    #map .map-address p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--blue-color-secondary);
+    }
+
+    #map-point {
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        height: 300px;
+    }
+
+    footer {
+        background-color: var(--blue-color-primary);
+        padding: 48px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .footer-text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer .footer-text img {
+        width: 200px;
+    }
+
+    footer .footer-text-copywriter {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer .footer-text-copywriter p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--light-color-primary);
+    }
+
+    footer ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+    }
+
+    @media (min-width: 350px) {
+        #map-point {
+            background-position-x: center;
+        }
+    }
+
+    @media (min-width: 40px) {
+        #map-point {
+            background-position: center;
+        }
+    }
+
+    @media (min-width: 8px) {
+
+        #hero {
+            flex-direction: row;
+        }
+
+        #services .services-cards {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #map-point {
+
+            background-position: center;
+        }
+
+        #hero {
+            flex-direction: row;
+        }
+
+        #services .services-cards {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #map-point {
+
+            background-position: center;
+        }
+
+        footer {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 14px) {
+        #hero .hero-text h2 {
+            font-size: 56px;
+            line-height: 64px;
+        }
+
+        #hero .hero-text p {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        #hero .hero-img img {
+            width: 40px;
+        }
+
+        #services .services-title h3,
+        #map .map-title h3 {
+            font-size: 44px;
+            line-height: 56px;
+        }
+
+        #map-point {
+
+            background-position: center;
+        }
+
+        #services .services-title .services-sub-title,
+        #map .map-title .map-sub-title {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        #map .map-address p {
+            font-size: 2px;
+            line-height: 28px;
+        }
+
+        footer .footer-text-copywriter {
+            flex-direction: row;
+            gap: 6px;
+        }
+    }
+
+    @media (min-width: 100px) {
+        header {
+            padding: 32px 72px;
+        }
+
+        #hero .hero-text {
+            width: 550px;
+        }
+
+        #hero .hero-img img {
+            width: 550px;
+        }
+
+        #services {
+            padding: 48px 72px;
+        }
+
+        #services .services-cards {
+            justify-content: space-around;
+        }
+
+        #map .map-title {
+            padding: 0 7px;
+        }
+
+        #map .map-address {
+            padding: 0 2px;
+        }
+
+        #map-point {
+
+            background-position: center;
+        }
+
+        footer {
+            padding: 0px 0px;
+        }
+    }
+</style>
+<header>
+    <div class="texto-animado">
+        <h1 class="animated fadeIn delay-04">
+            <span class="animated flipInX delay-06"></span><span class="animated flipInX delay-10">Parceiros</span>
+            <span class="animated flipInX delay-10"><span class="animated flipInX delay-10">Atlantico Brasil
+        </h1>
+    </div>
+</header>
+<div>
+    <section id="hero">
+        <div class="hero-text">
+            <h2>Atlantico Brasil é uma organização inovadora que se destaca no mercado de tecnologia e varejo.</h2>
+            <p>
+                Com um compromisso contínuo com a inovação e excelência, sua empresa se tornou uma referência no setor,
+                proporcionando aos consumidores experiências únicas e soluções tecnológicas de ponta.
+            </p>
+            <button>
+                <img src="" alt="" /><a href="http://localhost/pet/formulario.php">Agendar horário</a>
+            </button>
+        </div>
+        <div class="hero-img">
+            <img src="BRASIL.png" alt="" />
+        </div>
+    </section>
+    <!-- /hero -->
+    <section id="services">
+        <div class="services-title">
+            <p class="services-sub-title">Nossos serviços</p>
+            <h3>Veja o que fazemos de melhor</h3>
+        </div>
+        <div class="services-cards">
+            <div class="vet-services">
+                <img src="" alt="" />
+                <div class="vet-services-text">
+                    <h4>Microsoft</h4>
+                    <p>O Atlântico Brasil está explorando as vantagens do Microsoft Azure.
+                    </p>
+                </div>
+            </div>
+            <div class="groom-services">
+                <img src="" alt="" />
+                <div class="groom-services-text">
+                    <h4>Apple</h4>
+                    <p>A Atlântico Brasil está transformando sua abordagem digital com a Apple.</p>
+                </div>
+            </div>
+
+            <div class="groom-services">
+                <img src="" alt="" />
+                <div class="groom-services-text">
+                    <h4>Amazon</h4>
+                    <p>A Atlântico Brasil otimizou sua cadeia logística ao integrar os serviços de entrega da Amazon.
+                    </p>
+                </div>
+            </div>
+
+            <div class="groom-services">
+                <img src="" alt="" />
+                <div class="groom-services-text">
+                    <h4>Pix</h4>
+                    <p>Simplificamos suas transações financeiras incorporando o PIX.</p>
+                </div>
+            </div>
+        </div>
+</div>
+</section>
+<section id="services">
+    <div class="services-title">
+        <p class="services-sub-title">Nossos serviços</p>
+        <h3>Veja o que fazemos de melhor</h3>
+    </div>
+    <div class="services-cards">
+        <div class="vet-services">
+            <img src="" alt="" />
+            <div class="vet-services-text">
+                <h4>Microsoft</h4>
+                <p>O Atlântico Brasil está explorando as vantagens do Microsoft Azure.
+
+                </p>
+            </div>
+        </div>
+        <div class="groom-services">
+            <img src="" alt="" />
+            <div class="groom-services-text">
+                <h4>Apple</h4>
+                <p>A Atlântico Brasil está transformando sua abordagem digital com a Apple.</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+</li>
+<script src="main.js"></script>
+<footer>
+    <p>Todos os direitos reservados &copy; 2023 - Alan, Marcos, Evandro e João</p>
+</footer>
+</body>
+
+</html>
